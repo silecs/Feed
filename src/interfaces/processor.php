@@ -41,6 +41,8 @@
  */
 abstract class ezcFeedProcessor
 {
+    public $processingInstructions = array();
+
     /**
      * Holds the feed data container.
      *

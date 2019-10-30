@@ -811,9 +811,10 @@ class ezcFeed
      *         if the feed type $type is not supported
      *
      * @param string $type The feed type to generate
+     * @param array $processingInstructions Array of [target, data] (default=[])
      * @return string
      */
-    public function generate( $type = null )
+    public function generate( $type = null, $processingInstructions = [] )
     {
         if ( $this->feedType === null
              && $type === null )
@@ -838,6 +839,7 @@ class ezcFeed
 
         $className = self::$supportedFeedTypes[$this->feedType];
         $generator = new $className( $this );
+        $generator->processingInstructions = $processingInstructions;
 
         $this->contentType = constant( "{$className}::CONTENT_TYPE" );
         return $generator->generate();

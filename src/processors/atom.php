@@ -74,6 +74,11 @@ class ezcFeedAtom extends ezcFeedProcessor implements ezcFeedParser
         $this->xml = new DOMDocument( '1.0', 'utf-8' );
         $this->xml->formatOutput = 1;
 
+        foreach ($this->processingInstructions as $instruction) {
+            $transform = $this->xml->createProcessingInstruction($instruction[0], $instruction[1]);
+            $this->xml->appendChild($transform);
+        }
+
         $rss = $this->xml->createElementNS( self::NAMESPACE_URI, 'feed' );
         $this->channel = $rss;
         $this->root = $this->xml->appendChild( $rss );
