@@ -798,6 +798,16 @@ class ezcFeed
     }
 
     /**
+     * Remove an element from the feed.
+     *
+     * @param string $name
+     */
+    public function pop($name)
+    {
+        return array_pop($this->elements[$name]);
+    }
+
+    /**
      * Generates and returns an XML document of type $type from the current
      * object.
      *
