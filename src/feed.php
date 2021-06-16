@@ -241,17 +241,20 @@
  *           ATOM-contributor (optional, not recommended, multiple),
  *           RSS1-none,
  *           RSS2-none.
- * @property ezcFeedTextElement $copyright
+ * @property-write string|ezcFeedTextElement $copyright
+ * @property-read ezcFeedTextElement $copyright
  *           Copyright information for the feed. Equivalents:
  *           ATOM-rights (optional, single),
  *           RSS1-none,
  *           RSS2-copyright (optional, single).
- * @property ezcFeedTextElement $description
+ * @property-write string|ezcFeedTextElement $description
+ * @property-read ezcFeedTextElement $description
  *           A short description of the feed. Equivalents:
  *           ATOM-subtitle (required, single),
  *           RSS1-description (required, single),
  *           RSS2-description (required, single).
- * @property ezcFeedTextElement $docs
+ * @property-write string|ezcFeedTextElement $docs
+ * @property-read ezcFeedTextElement $docs
  *           An URL that points to the documentation for the format used in the
  *           feed file. Equivalents:
  *           ATOM-none,
@@ -268,7 +271,8 @@
  *           ATOM-icon (optional, not recommended, single),
  *           RSS1-none,
  *           RSS2-none.
- * @property ezcFeedIdElement $id
+ * @property-write int|string|ezcFeedIdElement $id
+ * @property-read ezcFeedIdElement $id
  *           A universally unique and permanent identifier for a feed. For
  *           example, it can be an Internet domain name. Equivalents:
  *           ATOM-id (required, single),
@@ -284,7 +288,8 @@
  *           ATOM-entry (optional, recommended, multiple),
  *           RSS1-item (required, multiple),
  *           RSS2-item (required, multiple).
- * @property ezcFeedTextElement $language
+ * @property-write string|ezcFeedTextElement $language
+ * @property-read ezcFeedTextElement $language
  *           The language for the feed. Equivalents:
  *           ATOM-xml:lang attribute for title, description, copyright, content,
  *           comments (optional, single) - accessed as language through ezcFeed,
@@ -295,12 +300,14 @@
  *           ATOM-link (required one link with rel='self', multiple),
  *           RSS1-link (required, single),
  *           RSS2-link (required, single).
- * @property ezcFeedDateElement $published
+ * @property-write int|ezcFeedDateElement $published
+ * @property-read ezcFeedDateElement $published
  *           The time the feed was published. Equivalents:
  *           ATOM-none,
  *           RSS1-none,
  *           RSS2-pubDate (optional, not recommended, single).
- * @property ezcFeedTextElement $rating
+ * @property-write int|string|ezcFeedTextElement $rating
+ * @property-read ezcFeedTextElement $rating
  *           The {@link http://www.w3.org/PICS/ PICS} rating for the channel. Equivalents:
  *           ATOM-none,
  *           RSS1-none,
@@ -322,19 +329,22 @@
  *           ATOM-none,
  *           RSS1-textinput (optional, not recommended, single),
  *           RSS2-textInput (optional, not recommended, single).
- * @property ezcFeedTextElement $title
+ * @property-write string|ezcFeedTextElement $title
+ * @property-read ezcFeedTextElement $title
  *           Human readable title for the feed. For example, it can be the same
  *           as the website title. Equivalents:
  *           ATOM-title (required, single),
  *           RSS1-title (required, single),
  *           RSS2-title (required, single).
- * @property ezcFeedTextElement $ttl
+ * @property-write int|string|ezcFeedTextElement $ttl
+ * @property-read ezcFeedTextElement $ttl
  *           Number of minutes that indicates how long a channel can be cached
  *           before refreshing from the source. Equivalents:
  *           ATOM-none,
  *           RSS1-none,
  *           RSS2-ttl (optional, not recommended, single).
- * @property ezcFeedDateElement $updated
+ * @property-write int|ezcFeedDateElement $updated
+ * @property-read ezcFeedDateElement $updated
  *           The last time the feed was updated. Equivalents:
  *           ATOM-updated (required, single),
  *           RSS1-none,

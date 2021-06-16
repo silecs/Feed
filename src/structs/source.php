@@ -38,9 +38,11 @@
  *           The categories from the source feed (ATOM only).
  * @property array(ezcFeedAuthorElement) $contributor
  *           The contributors from the source feed (ATOM only).
- * @property ezcFeedTextElement $copyright
+ * @property-write string|ezcFeedTextElement $copyright
+ * @property-read ezcFeedTextElement $copyright
  *           The copyright information from the source feed (ATOM only).
- * @property ezcFeedTextElement $description
+ * @property-write string|ezcFeedTextElement $description
+ * @property-read ezcFeedTextElement $description
  *           The description from the source feed (ATOM only).
  * @property ezcFeedGeneratorElement $generator
  *           The generator information from the source feed (ATOM only).
@@ -52,7 +54,8 @@
  *           The image from the source feed (ATOM only).
  * @property array(ezcFeedLinkElement) $link
  *           The links from the source feed (ATOM only).
- * @property ezcFeedTextElement $title
+ * @property-write string|ezcFeedTextElement $title
+ * @property-read ezcFeedTextElement $title
  *           The title from the source feed (ATOM only).
  * @property ezcFeedDateElement $updated
  *           The date and time of the last update from the source feed (ATOM only).

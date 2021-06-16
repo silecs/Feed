@@ -38,12 +38,14 @@
  *           ATOM-author (optional, multiple),
  *           RSS1-none,
  *           RSS2-category (optional, multiple).
- * @property ezcFeedTextElement $comments
+ * @property-write string|ezcFeedTextElement $comments
+ * @property-read ezcFeedTextElement $comments
  *           The comments of the entry. Equivalents:
  *           ATOM-none,
  *           RSS1-none,
  *           RSS2-author (optional, single).
- * @property ezcFeedContentElement $content
+ * @property-write string|ezcFeedContentElement $comments
+ * @property-read ezcFeedContentElement $content
  *           The complex text content of the entry. Equivalents:
  *           ATOM-content (optional, single),
  *           RSS1-none,
@@ -53,12 +55,14 @@
  *           ATOM-contributor (optional, not recommended, multiple),
  *           RSS1-none,
  *           RSS2-none.
- * @property ezcFeedTextElement $copyright
+ * @property-write string|ezcFeedTextElement $copyright
+ * @property-read ezcFeedTextElement $copyright
  *           The copyright of the entry. Equivalents:
  *           ATOM-rights (optional, single),
  *           RSS1-none,
  *           RSS2-none.
- * @property ezcFeedTextElement $description
+ * @property-write string|ezcFeedTextElement $description
+ * @property-read ezcFeedTextElement $description
  *           The description of the entry. Equivalents:
  *           ATOM-summary (required, single),
  *           RSS1-description (required, single),
@@ -68,7 +72,8 @@
  *           ATOM-link@rel="enclosure" (optional, multiple),
  *           RSS1-none,
  *           RSS2-enclosure (optional, single).
- * @property ezcFeedTextElement $id
+ * @property-write string|ezcFeedTextElement $id
+ * @property-read ezcFeedTextElement $id
  *           The id of the entry. Equivalents:
  *           ATOM-id (required, single),
  *           RSS1-about (required, single),
@@ -83,7 +88,8 @@
  *           ATOM-published (optional, single),
  *           RSS1-none,
  *           RSS2-pubDate (optional, single).
- * @property ezcFeedTextElement $title
+ * @property-write string|ezcFeedTextElement $title
+ * @property-read ezcFeedTextElement $title
  *           The title of the entry. Equivalents:
  *           ATOM-title (required, single),
  *           RSS1-title (required, single),
@@ -98,7 +104,8 @@
  *           ATOM-source (optional, not recommended, single),
  *           RSS1-none,
  *           RSS2-source (optional, not recommended, single).
- * @property ezcFeedTextElement $language
+ * @property-write string|ezcFeedTextElement $language
+ * @property-read ezcFeedTextElement $language
  *           The language of the entry. Equivalents:
  *           ATOM-source (optional, not recommended, single ),
  *           RSS1-none,
