@@ -161,7 +161,7 @@ abstract class ezcFeedProcessor
      * @param array(string=>mixed) $attributes The attributes to add to the node
      * @ignore
      */
-    protected function generateMetaDataWithAttributes( DOMNode $root, $element, $value = false, array $attributes )
+    protected function generateMetaDataWithAttributes( DOMNode $root, $element, $value = false, array $attributes = [])
     {
         if ( !is_array( $value ) )
         {
