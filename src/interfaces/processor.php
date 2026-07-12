@@ -180,7 +180,7 @@ abstract class ezcFeedProcessor
             foreach ( $attributes as $attrName => $attrValue )
             {
                 $attr = $this->xml->createAttribute( $attrName );
-                $text = $this->xml->createTextNode( $attrValue );
+                $text = $this->xml->createTextNode( (string) $attrValue );
                 $attr->appendChild( $text );
                 $meta->appendChild( $attr );
             }

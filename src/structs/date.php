@@ -117,23 +117,23 @@ class ezcFeedDateElement extends ezcFeedElement
         {
             return new DateTimeImmutable( "@{$date}" );
         }
-        else if ( $date instanceof DateTimeInterface )
+        if ( $date instanceof DateTimeInterface )
         {
             return $date;
         }
-        else
-        {
-            try
-            {
-                $d = new DateTimeImmutable( $date );
-            }
-            catch ( Exception $e )
-            {
-                return new DateTime();
-            }
-
-            return $d;
+        if ($date === null) {
+            return new DateTime();
         }
+        try
+        {
+            $d = new DateTimeImmutable( $date );
+        }
+        catch ( Exception $e )
+        {
+            return new DateTime();
+        }
+
+        return $d;
     }
 }
 ?>
