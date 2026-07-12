@@ -1,4 +1,7 @@
 <?php
+
+use PHPUnit\Framework\TestSuite;
+
 /**
  *
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -33,7 +36,7 @@ class ezcFeedTest extends ezcFeedTestCase
 {
     public static function suite()
     {
-        return new PHPUnit_Framework_TestSuite( __CLASS__ );
+        return new TestSuite( __CLASS__ );
     }
 
     public function testFeedNonExistentLocal()
