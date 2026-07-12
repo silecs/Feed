@@ -718,7 +718,7 @@ class ezcFeed
      *         if the element $name is not supported
      *
      * @param string $name The element name
-     * @return ezcFeedElement|null
+     * @return ezcFeedElement
      */
     public function add( $name )
     {
