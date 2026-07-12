@@ -432,7 +432,7 @@ class ezcFeed
      * @throws ezcFeedUnsupportedTypeException
      *         if the feed type $type is not supported
      *
-     * @param string $type The type of feed to create
+     * @param ?string $type The type of feed to create
      */
     public function __construct( $type = null )
     {
@@ -830,7 +830,7 @@ class ezcFeed
      * @throws ezcFeedUnsupportedTypeException
      *         if the feed type $type is not supported
      *
-     * @param string $type The feed type to generate
+     * @param ?string $type The feed type to generate
      * @param array $processingInstructions Array of [target, data] (default=[])
      * @return string
      */
