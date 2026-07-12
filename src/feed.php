@@ -916,7 +916,12 @@ class ezcFeed
 
         $xml = new DOMDocument();
         $oldSetting = libxml_use_internal_errors( true );
-        $retval = $xml->load( $uri );
+        try {
+            $retval = $xml->load( $uri );
+        } catch (\Throwable) {
+            libxml_use_internal_errors( $oldSetting );
+            throw new ezcBaseFileNotFoundException( $uri );
+        }
         libxml_use_internal_errors( $oldSetting );
 
         if ( $retval === false )
