@@ -454,7 +454,7 @@ class ezcFeedAtom extends ezcFeedProcessor implements ezcFeedParser
         $version = $generator->version;
         $url = $generator->url;
 
-        $elementTag = $this->xml->createElement( 'generator', $name );
+        $elementTag = $this->xml->createElement( 'generator', $name ?? "");
         $root->appendChild( $elementTag );
 
         if ( $version !== null )

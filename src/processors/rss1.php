@@ -284,7 +284,7 @@ class ezcFeedRss1 extends ezcFeedProcessor implements ezcFeedParser
         }
 
         $items = $this->item;
-        if ( count( $items ) === 0 )
+        if ( $items === null || count( $items ) === 0 )
         {
             throw new ezcFeedRequiredMetaDataMissingException( "/{$this->root->nodeName}/item" );
         }
@@ -299,7 +299,7 @@ class ezcFeedRss1 extends ezcFeedProcessor implements ezcFeedParser
             $about = $item->id;
             $liTag = $this->xml->createElement( 'rdf:li' );
             $resourceAttr = $this->xml->createAttribute( 'resource' );
-            $resourceVal = $this->xml->createTextNode( $about );
+            $resourceVal = $this->xml->createTextNode( $about ?? "" );
             $resourceAttr->appendChild( $resourceVal );
             $liTag->appendChild( $resourceAttr );
             $seqTag->appendChild( $liTag );
@@ -317,7 +317,7 @@ class ezcFeedRss1 extends ezcFeedProcessor implements ezcFeedParser
             }
 
             $resourceAttr = $this->xml->createAttribute( 'rdf:resource' );
-            $resourceVal = $this->xml->createTextNode( $about );
+            $resourceVal = $this->xml->createTextNode( $about ?? "" );
             $resourceAttr->appendChild( $resourceVal );
             $imageTag->appendChild( $resourceAttr );
 
@@ -336,7 +336,7 @@ class ezcFeedRss1 extends ezcFeedProcessor implements ezcFeedParser
             }
 
             $resourceAttr = $this->xml->createAttribute( 'rdf:resource' );
-            $resourceVal = $this->xml->createTextNode( $about );
+            $resourceVal = $this->xml->createTextNode( $about ?? "" );
             $resourceAttr->appendChild( $resourceVal );
             $textInputTag->appendChild( $resourceAttr );
 
@@ -361,7 +361,7 @@ class ezcFeedRss1 extends ezcFeedProcessor implements ezcFeedParser
             }
 
             $aboutAttr = $this->xml->createAttribute( 'rdf:about' );
-            $aboutVal = $this->xml->createTextNode( $data );
+            $aboutVal = $this->xml->createTextNode( $data ?? "" );
             $aboutAttr->appendChild( $aboutVal );
             $itemTag->appendChild( $aboutAttr );
 
@@ -419,7 +419,7 @@ class ezcFeedRss1 extends ezcFeedProcessor implements ezcFeedParser
             }
 
             $aboutAttr = $this->xml->createAttribute( 'rdf:about' );
-            $aboutVal = $this->xml->createTextNode( $data );
+            $aboutVal = $this->xml->createTextNode( $data ?? "" );
             $aboutAttr->appendChild( $aboutVal );
             $imageTag->appendChild( $aboutAttr );
 
@@ -455,7 +455,7 @@ class ezcFeedRss1 extends ezcFeedProcessor implements ezcFeedParser
             }
 
             $aboutAttr = $this->xml->createAttribute( 'rdf:about' );
-            $aboutVal = $this->xml->createTextNode( $data );
+            $aboutVal = $this->xml->createTextNode( $data ?? "" );
             $aboutAttr->appendChild( $aboutVal );
             $textInputTag->appendChild( $aboutAttr );
 
