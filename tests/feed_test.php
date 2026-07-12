@@ -93,6 +93,7 @@ class ezcFeedTest extends ezcFeedTestCase
 
     public function testFeedExistsRemote()
     {
+        $this->markTestSkipped('Do not rely on a network availability.');
         $feed = ezcFeed::parse( 'http://ez.no/rss/feed/news' );
     }
 
