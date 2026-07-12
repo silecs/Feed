@@ -48,11 +48,11 @@ class ezcFeedAtomRegressionGenerateTest extends ezcFeedRegressionTest
 
     protected function cleanForCompare( $text )
     {
-        $text = preg_replace( '@<updated>.*?</updated>@', '<updated>XXX</updated>', $text );
-        $text = preg_replace( '@<published>.*?</published>@', '<published>XXX</published>', $text );
-        $text = preg_replace( '@<generator.*?>.*?</generator>@', '<generator>XXX</generator>', $text );
+        $text = preg_replace( '@<updated>.+?</updated>@', '<updated>XXX</updated>', $text );
+        $text = preg_replace( '@<published>.+?</published>@', '<published>XXX</published>', $text );
+        $text = preg_replace( '@<generator.*?>.+?</generator>@', '<generator>XXX</generator>', $text );
 
-        $text = preg_replace( '@<dc:date.*?>.*?</dc:date>@', '<dc:date>XXX</dc:date>', $text );
+        $text = preg_replace( '@<dc:date.*?>.+?</dc:date>@', '<dc:date>XXX</dc:date>', $text );
         return $text;
     }
 
@@ -76,7 +76,11 @@ class ezcFeedAtomRegressionGenerateTest extends ezcFeedRegressionTest
             $generated = $e->getMessage();
         }
 
-        $this->assertEquals( $expected, $generated, "The " . basename( $outFile ) . " is not the same as the generated feed from " . basename( $file ) . "." );
+        if ($expected[0] === '<') {
+            $this->assertXmlStringEqualsXmlString( $expected, $generated, "The " . basename( $outFile ) . " is not the same as the generated feed from " . basename( $file ) . "." );
+        } else {
+            $this->assertSame( $expected, $generated, "The " . basename( $outFile ) . " is not the same as the generated feed from " . basename( $file ) . "." );
+        }
     }
 }
 ?>
