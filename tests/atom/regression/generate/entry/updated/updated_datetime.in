@@ -7,5 +7,5 @@ return array( 'id' => 'Feed id',
               'item' => array( array( 'id' => 'Entry id',
                                       'title' => 'Entry title',
                                       'content' => 'Entry content',
-									  'updated' => new DateTime( '@1195466397' ) ) ) );
+									  'updated' => new DateTimeImmutable( '@1195466397' ) ) ) );
 ?>

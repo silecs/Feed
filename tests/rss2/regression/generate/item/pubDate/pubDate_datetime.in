@@ -5,6 +5,6 @@ return array( 'title' => 'Feed title',
 			  'item' => array( array( 'title' => 'Item title',
                                       'link' => 'Item link',
                                       'description' => 'Item description',
-                                      'published' => new DateTime( '@' . time() ) ), ),
+                                      'published' => new DateTimeImmutable( '@' . time() ) ), ),
             );
 ?>

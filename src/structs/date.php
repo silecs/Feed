@@ -115,7 +115,7 @@ class ezcFeedDateElement extends ezcFeedElement
     {
         if ( is_numeric( $date ) )
         {
-            return new DateTime( "@{$date}" );
+            return new DateTimeImmutable( "@{$date}" );
         }
         else if ( $date instanceof DateTimeInterface )
         {
@@ -125,7 +125,7 @@ class ezcFeedDateElement extends ezcFeedElement
         {
             try
             {
-                $d = new DateTime( $date );
+                $d = new DateTimeImmutable( $date );
             }
             catch ( Exception $e )
             {

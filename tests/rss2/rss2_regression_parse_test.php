@@ -51,14 +51,14 @@ class ezcFeedRss2RegressionParseTest extends ezcTestRegressionTest
         $referenceDate = new DateTime();
 
         if ( $parsed->updated instanceof ezcFeedElement
-             && $parsed->updated->date instanceof DateTime )
+             && $parsed->updated->date instanceof DateTimeInterface )
         {
             $parsed->updated->date = $referenceDate;
             $expected->updated->date = $referenceDate;
         }
 
         if ( $parsed->published instanceof ezcFeedElement
-             && $parsed->published->date instanceof DateTime )
+             && $parsed->published->date instanceof DateTimeInterface )
         {
             $parsed->published = $referenceDate;
             $expected->published = $referenceDate;

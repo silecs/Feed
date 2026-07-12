@@ -8,5 +8,5 @@ return array( 'id' => 'Feed id',
                                       'title' => 'Entry title',
                                       'content' => 'Entry content',
 									  'updated' => 'Entry updated',
-                                      'published' => new DateTime( '@1195466397' ) ) ) );
+                                      'published' => new DateTimeImmutable( '@1195466397' ) ) ) );
 ?>

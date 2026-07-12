@@ -2,6 +2,6 @@
 return array( 'title' => 'Feed title',
               'link'  => array( array( 'href' => 'Feed link' ) ),
               'description' => 'Feed description',
-              'published' => new DateTime( '@' . time() ),
+              'published' => new DateTimeImmutable( '@' . time() ),
             );
 ?>
