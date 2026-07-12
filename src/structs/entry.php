@@ -83,7 +83,8 @@
  *           ATOM-link (required, multiple),
  *           RSS1-link (required, single),
  *           RSS2-link (required, single).
- * @property ezcFeedDateElement $published
+ * @property-write int|string|DateTimeInterface|ezcFeedDateElement $published
+ * @property-read ezcFeedDateElement $published
  *           The published date of the entry. Equivalents:
  *           ATOM-published (optional, single),
  *           RSS1-none,
@@ -94,7 +95,8 @@
  *           ATOM-title (required, single),
  *           RSS1-title (required, single),
  *           RSS2-title (required, single).
- * @property ezcFeedDateElement $updated
+ * @property-write int|string|DateTimeInterface|ezcFeedDateElement $updated
+ * @property-read ezcFeedDateElement $updated
  *           The updated date of the entry. Equivalents:
  *           ATOM-updated (required, single),
  *           RSS1-none,

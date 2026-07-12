@@ -53,7 +53,7 @@ class ezcFeedAtomRegressionParseTest extends ezcTestRegressionTest
         if ( isset( $parsed->updated ) )
         {
             if ( $parsed->updated instanceof ezcFeedDateElement
-                 && $parsed->updated->date instanceof DateTime )
+                 && $parsed->updated->date instanceof DateTimeInterface )
             {
                 $parsed->updated->date = $referenceDate;
                 $expected->updated->date = $referenceDate;

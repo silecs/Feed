@@ -28,10 +28,10 @@
 /**
  * Class defining a date element.
  *
- * @property DateTime $date
- *                    The date stored as a DateTime object. An integer timestamp
+ * @property DateTimeInterface $date
+ *                    The date stored as a DateTimeInterface object. An integer timestamp
  *                    or a formatted string date can be assigned to the $date
- *                    property, and it will be converted to a DateTime object.
+ *                    property, and it will be converted to a DateTimeInterface object.
  *                    If the conversion was not successful, the current date
  *                    is assigned to the property.
  *
@@ -103,13 +103,13 @@ class ezcFeedDateElement extends ezcFeedElement
     }
 
     /**
-     * Returns the provided $date (timestamp, string or DateTime object) as a
-     * DateTime object.
+     * Returns the provided $date (timestamp, string or DateTimeInterface object) as a
+     * DateTimeInterface object.
      *
      * It preserves the timezone if $date contained timezone information.
      *
-     * @param mixed $date A date specified as a timestamp, string or DateTime object
-     * @return DateTime
+     * @param mixed $date A date specified as a timestamp, string or DateTimeInterface object
+     * @return DateTimeInterface
      */
     private function prepareDate( $date )
     {
@@ -117,7 +117,7 @@ class ezcFeedDateElement extends ezcFeedElement
         {
             return new DateTime( "@{$date}" );
         }
-        else if ( $date instanceof DateTime )
+        else if ( $date instanceof DateTimeInterface )
         {
             return $date;
         }

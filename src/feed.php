@@ -300,7 +300,7 @@
  *           ATOM-link (required one link with rel='self', multiple),
  *           RSS1-link (required, single),
  *           RSS2-link (required, single).
- * @property-write int|ezcFeedDateElement $published
+ * @property-write int|string|DateTimeInterface|ezcFeedDateElement $published
  * @property-read ezcFeedDateElement $published
  *           The time the feed was published. Equivalents:
  *           ATOM-none,
@@ -343,7 +343,7 @@
  *           ATOM-none,
  *           RSS1-none,
  *           RSS2-ttl (optional, not recommended, single).
- * @property-write int|ezcFeedDateElement $updated
+ * @property-write int|string|DateTimeInterface|ezcFeedDateElement $updated
  * @property-read ezcFeedDateElement $updated
  *           The last time the feed was updated. Equivalents:
  *           ATOM-updated (required, single),
