@@ -89,7 +89,7 @@ class ezcFeedAtom extends ezcFeedProcessor implements ezcFeedParser
         $this->generateFeedModules( $this->channel );
         $this->generateItems();
 
-        return $this->xml->saveXML();
+        return $this->xml->saveXML(null, LIBXML_NOEMPTYTAG);
     }
 
     /**
@@ -1080,7 +1080,7 @@ class ezcFeedAtom extends ezcFeedProcessor implements ezcFeedParser
                                             $doc = new DOMDocument( '1.0', 'UTF-8' );
                                             $copyNode = $doc->importNode( $node, true );
                                             $doc->appendChild( $copyNode );
-                                            $subElement->text = $doc->saveXML();
+                                            $subElement->text = $doc->saveXML(null, LIBXML_NOEMPTYTAG);
                                             $subElement->type = $type;
                                             break;
                                         }
